@@ -1,0 +1,3 @@
+product name :- sample product
+price: 200
+image: sdlflsdfj

@@ -1,0 +1,17 @@
+{
+  "name": "pagination-emails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.5",
+    "nodemailer": "^6.7.2"
+  }
+}

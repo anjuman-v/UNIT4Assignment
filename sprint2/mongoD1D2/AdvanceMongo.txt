@@ -1,0 +1,1443 @@
+anjuman@anjuman-Lenovo-ideapad-320-14ISK:~$ mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("8565709e-b6fb-4ae5-ae14-c1ecd5088a58") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2022-03-11T10:51:36.602+05:30: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-03-11T10:51:39.672+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin           0.000GB
+assignment      0.000GB
+config          0.000GB
+local           0.000GB
+moviesdatabase  0.000GB
+test            0.000GB
+> use moviesdatabase
+switched to db moviesdatabase
+> show collections
+movies
+> db.movies.find().pretty()
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c3"),
+	"id" : 1,
+	"movie_name" : "Turn Me On, Dammit! (Få meg på, for faen)",
+	"moviesDate" : "4/18/2014",
+	"moviesbudget" : 2194
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c4"),
+	"id" : 2,
+	"movie_name" : "Bill Cunningham New York",
+	"moviesDate" : "2/9/2006",
+	"moviesbudget" : 2210
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c5"),
+	"id" : 3,
+	"movie_name" : "Lee Daniels' The Butler",
+	"moviesDate" : "8/29/2017",
+	"moviesbudget" : 4456
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c6"),
+	"id" : 4,
+	"movie_name" : "Boom Town",
+	"moviesDate" : "4/4/2010",
+	"moviesbudget" : 4657
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c7"),
+	"id" : 5,
+	"movie_name" : "Boys and Girls",
+	"moviesDate" : "2/18/2012",
+	"moviesbudget" : 2494
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c8"),
+	"id" : 6,
+	"movie_name" : "Puppet Master III: Toulon's Revenge",
+	"moviesDate" : "10/8/1999",
+	"moviesbudget" : 4210
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c9"),
+	"id" : 7,
+	"movie_name" : "They Live",
+	"moviesDate" : "3/19/2014",
+	"moviesbudget" : 4606
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31ca"),
+	"id" : 8,
+	"movie_name" : "Storm Rider",
+	"moviesDate" : "11/21/2008",
+	"moviesbudget" : 2028
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cb"),
+	"id" : 9,
+	"movie_name" : "Child's Pose",
+	"moviesDate" : "12/22/2017",
+	"moviesbudget" : 3623
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cc"),
+	"id" : 10,
+	"movie_name" : "Bad Fucking",
+	"moviesDate" : "6/1/2003",
+	"moviesbudget" : 2807
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cd"),
+	"id" : 11,
+	"movie_name" : "Young People Fucking (a.k.a. YPF)",
+	"moviesDate" : "11/9/2009",
+	"moviesbudget" : 1011
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31ce"),
+	"id" : 12,
+	"movie_name" : "Half a Loaf of Kung Fu (Dian zhi gong fu gan chian chan)",
+	"moviesDate" : "2/2/2005",
+	"moviesbudget" : 3090
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cf"),
+	"id" : 13,
+	"movie_name" : "Starlet",
+	"moviesDate" : "8/31/2013",
+	"moviesbudget" : 3114
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d0"),
+	"id" : 14,
+	"movie_name" : "Blood Creek (a.k.a. Town Creek)",
+	"moviesDate" : "12/26/2009",
+	"moviesbudget" : 4109
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d1"),
+	"id" : 15,
+	"movie_name" : "Suspicious River",
+	"moviesDate" : "1/20/2020",
+	"moviesbudget" : 3708
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d2"),
+	"id" : 16,
+	"movie_name" : "Aningaaq",
+	"moviesDate" : "4/8/2003",
+	"moviesbudget" : 2466
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d3"),
+	"id" : 17,
+	"movie_name" : "Matilda",
+	"moviesDate" : "6/22/2023",
+	"moviesbudget" : 2541
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d4"),
+	"id" : 18,
+	"movie_name" : "Name for Evil, A",
+	"moviesDate" : "1/27/2000",
+	"moviesbudget" : 3418
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d5"),
+	"id" : 19,
+	"movie_name" : "Notorious",
+	"moviesDate" : "5/19/2023",
+	"moviesbudget" : 1177
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d6"),
+	"id" : 20,
+	"movie_name" : "Entity",
+	"moviesDate" : "8/11/2018",
+	"moviesbudget" : 3092
+}
+Type "it" for more
+> db.movies.find().count()
+500
+> db.movies.find({movie_name:{$eq:"Entity"}}).pretty()
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d6"),
+	"id" : 20,
+	"movie_name" : "Entity",
+	"moviesDate" : "8/11/2018",
+	"moviesbudget" : 3092
+}
+> db.movies.find({movie_name:{$ne:"Hangover, The"}}).pretty()
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c3"),
+	"id" : 1,
+	"movie_name" : "Turn Me On, Dammit! (Få meg på, for faen)",
+	"moviesDate" : "4/18/2014",
+	"moviesbudget" : 2194
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c4"),
+	"id" : 2,
+	"movie_name" : "Bill Cunningham New York",
+	"moviesDate" : "2/9/2006",
+	"moviesbudget" : 2210
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c5"),
+	"id" : 3,
+	"movie_name" : "Lee Daniels' The Butler",
+	"moviesDate" : "8/29/2017",
+	"moviesbudget" : 4456
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c6"),
+	"id" : 4,
+	"movie_name" : "Boom Town",
+	"moviesDate" : "4/4/2010",
+	"moviesbudget" : 4657
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c7"),
+	"id" : 5,
+	"movie_name" : "Boys and Girls",
+	"moviesDate" : "2/18/2012",
+	"moviesbudget" : 2494
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c8"),
+	"id" : 6,
+	"movie_name" : "Puppet Master III: Toulon's Revenge",
+	"moviesDate" : "10/8/1999",
+	"moviesbudget" : 4210
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31c9"),
+	"id" : 7,
+	"movie_name" : "They Live",
+	"moviesDate" : "3/19/2014",
+	"moviesbudget" : 4606
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31ca"),
+	"id" : 8,
+	"movie_name" : "Storm Rider",
+	"moviesDate" : "11/21/2008",
+	"moviesbudget" : 2028
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cb"),
+	"id" : 9,
+	"movie_name" : "Child's Pose",
+	"moviesDate" : "12/22/2017",
+	"moviesbudget" : 3623
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cc"),
+	"id" : 10,
+	"movie_name" : "Bad Fucking",
+	"moviesDate" : "6/1/2003",
+	"moviesbudget" : 2807
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cd"),
+	"id" : 11,
+	"movie_name" : "Young People Fucking (a.k.a. YPF)",
+	"moviesDate" : "11/9/2009",
+	"moviesbudget" : 1011
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31ce"),
+	"id" : 12,
+	"movie_name" : "Half a Loaf of Kung Fu (Dian zhi gong fu gan chian chan)",
+	"moviesDate" : "2/2/2005",
+	"moviesbudget" : 3090
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31cf"),
+	"id" : 13,
+	"movie_name" : "Starlet",
+	"moviesDate" : "8/31/2013",
+	"moviesbudget" : 3114
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d0"),
+	"id" : 14,
+	"movie_name" : "Blood Creek (a.k.a. Town Creek)",
+	"moviesDate" : "12/26/2009",
+	"moviesbudget" : 4109
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d1"),
+	"id" : 15,
+	"movie_name" : "Suspicious River",
+	"moviesDate" : "1/20/2020",
+	"moviesbudget" : 3708
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d2"),
+	"id" : 16,
+	"movie_name" : "Aningaaq",
+	"moviesDate" : "4/8/2003",
+	"moviesbudget" : 2466
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d3"),
+	"id" : 17,
+	"movie_name" : "Matilda",
+	"moviesDate" : "6/22/2023",
+	"moviesbudget" : 2541
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d4"),
+	"id" : 18,
+	"movie_name" : "Name for Evil, A",
+	"moviesDate" : "1/27/2000",
+	"moviesbudget" : 3418
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d5"),
+	"id" : 19,
+	"movie_name" : "Notorious",
+	"moviesDate" : "5/19/2023",
+	"moviesbudget" : 1177
+}
+{
+	"_id" : ObjectId("622a3c92dd662be8f19e31d6"),
+	"id" : 20,
+	"movie_name" : "Entity",
+	"moviesDate" : "8/11/2018",
+	"moviesbudget" : 3092
+}
+Type "it" for more
+> 
+> 
+> db.movies.find({budget:{$gte:19000}}).pretty()
+> db.movies.find({budget:{$gte:2000}}).pretty()
+> db.movies.find({budget:{$gte:200}}).pretty()
+> db.movies.find({budget:{$gte:3092}}).pretty()
+> 
+> 
+> db.movies.find({budget:{$lte:910}}).pretty() 
+> 
+
+
+db.movies.find({$and:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+
+db.movies.find({$or:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+
+db.movies.find({$nor:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+
+db.movies.find({$or:[{production_year:{$ne:2000}},{budget:{$ne:10000}}]}).pretty()
+
+db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).pretty()
+
+db.movies.find({},{movie_name:1,production_year:1,_id:0}).sort({production_year: -1,movie_name: -1}).pretty()
+
+> db.movies.find({movie_name:{$eq:"Hangover, The"}}).pretty()  
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e6"),
+        "id" : 17,
+        "movie_name" : "Hangover, The",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 1994,
+        "budget" : 10741
+}
+> db.movies.find({movie_name:{$ne:"Hangover, The"}}).pretty() 
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d6"),
+        "id" : 1,
+        "movie_name" : "Crazed Fruit (Kurutta kajitsu)",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 10419
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d7"),
+        "id" : 2,
+        "movie_name" : "Pet Sematary II",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 1994,
+        "budget" : 11954
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d8"),
+        "id" : 3,
+        "movie_name" : "The Real Glory",
+        "movie_genre" : "War",
+        "production_year" : 2016,
+        "budget" : 10248
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d9"),
+        "id" : 4,
+        "movie_name" : "Sex Ed",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2012,
+        "budget" : 15113
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5da"),
+        "id" : 5,
+        "movie_name" : "Submarine",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1999,
+        "budget" : 15937
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5db"),
+        "id" : 6,
+        "movie_name" : "Sting, The",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2012,
+        "budget" : 19258
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dc"),
+        "id" : 7,
+        "movie_name" : "Rivers and Tides",
+        "movie_genre" : "Documentary",
+        "production_year" : 2004,
+        "budget" : 19662
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dd"),
+        "id" : 8,
+        "movie_name" : "Prime Suspect",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 2001,
+        "budget" : 11585
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5de"),
+        "id" : 9,
+        "movie_name" : "SUBWAYStories: Tales from the Underground",
+        "movie_genre" : "Drama",
+        "production_year" : 2018,
+        "budget" : 18232
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5df"),
+        "id" : 10,
+        "movie_name" : "Blow",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2014,
+        "budget" : 16689
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e0"),
+        "id" : 11,
+        "movie_name" : "Congress, The",
+        "movie_genre" : "Animation|Sci-Fi",
+        "production_year" : 2019,
+        "budget" : 11978
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e1"),
+        "id" : 12,
+        "movie_name" : "Move (3 Zimmer/Küche/Bad)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2010,
+        "budget" : 16887
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e2"),
+        "id" : 13,
+        "movie_name" : "28 Up",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 13823
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e3"),
+        "id" : 14,
+        "movie_name" : "Dogtooth (Kynodontas)",
+        "movie_genre" : "Drama",
+        "production_year" : 2013,
+        "budget" : 11253
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e4"),
+        "id" : 15,
+        "movie_name" : "Why Stop Now",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 14895
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e5"),
+        "id" : 16,
+        "movie_name" : "The Green Years",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e7"),
+        "id" : 18,
+        "movie_name" : "Kim",
+        "movie_genre" : "Children|Drama",
+        "production_year" : 2008,
+        "budget" : 10232
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e8"),
+        "id" : 19,
+        "movie_name" : "Gigli",
+        "movie_genre" : "Comedy|Crime|Romance",
+        "production_year" : 2010,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e9"),
+        "id" : 20,
+        "movie_name" : "Phaedra",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 18489
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5ea"),
+        "id" : 21,
+        "movie_name" : "Ballad of Cable Hogue, The",
+        "movie_genre" : "Comedy|Western",
+        "production_year" : 1997,
+        "budget" : 13114
+}
+Type "it" for more
+> db.movies.find({budget:{$gte:19000}}).pretty()            
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5db"),
+        "id" : 6,
+        "movie_name" : "Sting, The",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2012,
+        "budget" : 19258
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dc"),
+        "id" : 7,
+        "movie_name" : "Rivers and Tides",
+        "movie_genre" : "Documentary",
+        "production_year" : 2004,
+        "budget" : 19662
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5ef"),
+        "id" : 26,
+        "movie_name" : "Pastoral Hide and Seek (Den-en ni shisu)",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 19466
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5f9"),
+        "id" : 36,
+        "movie_name" : "Fame",
+        "movie_genre" : "Drama|Musical",
+        "production_year" : 2018,
+        "budget" : 19694
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c600"),
+        "id" : 43,
+        "movie_name" : "Human Failure (Menschliches Versagen)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2014,
+        "budget" : 19862
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c601"),
+        "id" : 44,
+        "movie_name" : "Noel",
+        "movie_genre" : "Drama",
+        "production_year" : 1994,
+        "budget" : 19355
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c60f"),
+        "id" : 58,
+        "movie_name" : "Halloweentown II: Kalabar's Revenge",
+        "movie_genre" : "Adventure|Children|Comedy|Drama|Fantasy",
+        "production_year" : 2007,
+        "budget" : 19640
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c615"),
+        "id" : 64,
+        "movie_name" : "Dark Prince: The True Story of Dracula",
+        "movie_genre" : "Drama|Horror|Thriller",
+        "production_year" : 1999,
+        "budget" : 19727
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c61a"),
+        "id" : 69,
+        "movie_name" : "Breaking News (Daai si gin)",
+        "movie_genre" : "Action|Crime|Drama",
+        "production_year" : 2006,
+        "budget" : 19222
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c61c"),
+        "id" : 71,
+        "movie_name" : "Cold Weather",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 19928
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c632"),
+        "id" : 93,
+        "movie_name" : "Five Minutes of Heaven",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 19093
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c637"),
+        "id" : 98,
+        "movie_name" : "Bloody Mama",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2004,
+        "budget" : 19477
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c638"),
+        "id" : 99,
+        "movie_name" : "Belphecor: Curse of the Mummy (Belphégor - Le fantôme du Louvre)",
+        "movie_genre" : "Fantasy|Horror|Mystery",
+        "production_year" : 2005,
+        "budget" : 19579
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c63b"),
+        "id" : 102,
+        "movie_name" : "Frankenstein",
+        "movie_genre" : "Drama|Horror|Sci-Fi",
+        "production_year" : 1995,
+        "budget" : 19745
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c648"),
+        "id" : 115,
+        "movie_name" : "Grin Without a Cat, A (Fond de l'air est rouge, Le)",
+        "movie_genre" : "Documentary",
+        "production_year" : 1994,
+        "budget" : 19129
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c66a"),
+        "id" : 149,
+        "movie_name" : "The Smiling Ghost",
+        "movie_genre" : "Comedy|Mystery",
+        "production_year" : 2018,
+        "budget" : 19123
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c66b"),
+        "id" : 150,
+        "movie_name" : "Cabin Fever 2: Spring Fever",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2015,
+        "budget" : 19143
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c66e"),
+        "id" : 153,
+        "movie_name" : "Fiend Without a Face",
+        "movie_genre" : "Horror|Sci-Fi|Thriller",
+        "production_year" : 2017,
+        "budget" : 19058
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c674"),
+        "id" : 159,
+        "movie_name" : "Marie from the Bay of Angels (Marie Baie Des Anges)",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 19756
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c67d"),
+        "id" : 168,
+        "movie_name" : "Kiss, The",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2019,
+        "budget" : 19594
+}
+Type "it" for more
+> db.movies.find({budget:{$lte:9100}}).pretty() 
+{
+        "_id" : ObjectId("622807da49007ce3feb8c614"),
+        "id" : 63,
+        "movie_name" : "Winter of Discontent",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 9049
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c6b5"),
+        "id" : 224,
+        "movie_name" : "Texas Chainsaw 3D",
+        "movie_genre" : "Horror|Mystery|Thriller",
+        "production_year" : 2014,
+        "budget" : 9099
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c6c0"),
+        "id" : 235,
+        "movie_name" : "Better Living",
+        "movie_genre" : "Comedy",
+        "production_year" : 2003,
+        "budget" : 9095
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c6d8"),
+        "id" : 259,
+        "movie_name" : "Merchant of Four Seasons, The (Händler der vier Jahreszeiten)",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 9021
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c6ff"),
+        "id" : 298,
+        "movie_name" : "Ghost Rider",
+        "movie_genre" : "Action|Fantasy|Thriller",
+        "production_year" : 1999,
+        "budget" : 9095
+}
+> db.movies.find({$and:{production_year:{$gt:2000},budget:{$gt:10000}}).pretty().count()
+...
+... db.movies.find({$and:[{production_year:{$gt:2000},budget:{$gt:10000}}]}).pretty().count()
+... db.movies.find({$and:{production_year:{$gt:2000},budget:{$gt:10000}}}).pretty().count()  
+... db.movies.find({}).count()
+... show collections
+... ^C
+
+>
+> show collections
+movies
+user
+users
+> db.movies.find({$and:{production_year:{$gt:2000},budget:{$gt:10000}}}).pretty().count()
+uncaught exception: Error: count failed: {
+        "ok" : 0,
+        "errmsg" : "$and must be an array",
+        "code" : 2,
+        "codeName" : "BadValue"
+} :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DBQuery.prototype.count@src/mongo/shell/query.js:387:11
+@(shell):1:1
+> db.movies.find({$and:[{production_year:{$gt:2000},budget:{$gt:10000}}]}).pretty().count()
+303
+> db.movies.find({$and:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()        
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d6"),
+        "id" : 1,
+        "movie_name" : "Crazed Fruit (Kurutta kajitsu)",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 10419
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d8"),
+        "id" : 3,
+        "movie_name" : "The Real Glory",
+        "movie_genre" : "War",
+        "production_year" : 2016,
+        "budget" : 10248
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d9"),
+        "id" : 4,
+        "movie_name" : "Sex Ed",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2012,
+        "budget" : 15113
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5db"),
+        "id" : 6,
+        "movie_name" : "Sting, The",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2012,
+        "budget" : 19258
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dc"),
+        "id" : 7,
+        "movie_name" : "Rivers and Tides",
+        "movie_genre" : "Documentary",
+        "production_year" : 2004,
+        "budget" : 19662
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dd"),
+        "id" : 8,
+        "movie_name" : "Prime Suspect",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 2001,
+        "budget" : 11585
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5de"),
+        "id" : 9,
+        "movie_name" : "SUBWAYStories: Tales from the Underground",
+        "movie_genre" : "Drama",
+        "production_year" : 2018,
+        "budget" : 18232
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5df"),
+        "id" : 10,
+        "movie_name" : "Blow",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2014,
+        "budget" : 16689
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e0"),
+        "id" : 11,
+        "movie_name" : "Congress, The",
+        "movie_genre" : "Animation|Sci-Fi",
+        "production_year" : 2019,
+        "budget" : 11978
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e1"),
+        "id" : 12,
+        "movie_name" : "Move (3 Zimmer/Küche/Bad)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2010,
+        "budget" : 16887
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e2"),
+        "id" : 13,
+        "movie_name" : "28 Up",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 13823
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e3"),
+        "id" : 14,
+        "movie_name" : "Dogtooth (Kynodontas)",
+        "movie_genre" : "Drama",
+        "production_year" : 2013,
+        "budget" : 11253
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e4"),
+        "id" : 15,
+        "movie_name" : "Why Stop Now",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 14895
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e7"),
+        "id" : 18,
+        "movie_name" : "Kim",
+        "movie_genre" : "Children|Drama",
+        "production_year" : 2008,
+        "budget" : 10232
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e8"),
+        "id" : 19,
+        "movie_name" : "Gigli",
+        "movie_genre" : "Comedy|Crime|Romance",
+        "production_year" : 2010,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e9"),
+        "id" : 20,
+        "movie_name" : "Phaedra",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 18489
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5eb"),
+        "id" : 22,
+        "movie_name" : "White Angel, The (L'angelo bianco)",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 17297
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5ec"),
+        "id" : 23,
+        "movie_name" : "Chapman Report, The",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2014,
+        "budget" : 17990
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5ed"),
+        "id" : 24,
+        "movie_name" : "There Be Dragons",
+        "movie_genre" : "Drama|War",
+        "production_year" : 2011,
+        "budget" : 16644
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5ef"),
+        "id" : 26,
+        "movie_name" : "Pastoral Hide and Seek (Den-en ni shisu)",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 19466
+}
+Type "it" for more
+> db.movies.find({$nor:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("622807da49007ce3feb8c605"),
+        "id" : 48,
+        "movie_name" : "Vicky Donor",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1996,
+        "budget" : 9914
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c614"),
+        "id" : 63,
+        "movie_name" : "Winter of Discontent",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 9049
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c617"),
+        "id" : 66,
+        "movie_name" : "Sex and Zen (Rou pu Tuan zhi tou Qing bao Jian)",
+        "movie_genre" : "Action|Adventure|Comedy|Fantasy",
+        "production_year" : 1993,
+        "budget" : 9606
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c62b"),
+        "id" : 86,
+        "movie_name" : "Kariera Nikosia Dyzmy",
+        "movie_genre" : "Comedy",
+        "production_year" : 1990,
+        "budget" : 9536
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c65a"),
+        "id" : 133,
+        "movie_name" : "Stranger than Fiction",
+        "movie_genre" : "Comedy|Drama|Fantasy|Romance",
+        "production_year" : 1990,
+        "budget" : 9795
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c6c5"),
+        "id" : 240,
+        "movie_name" : "Hello Ladies: The Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 1992,
+        "budget" : 9399
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c6e9"),
+        "id" : 276,
+        "movie_name" : "It Conquered the World",
+        "movie_genre" : "Sci-Fi",
+        "production_year" : 2000,
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c6ff"),
+        "id" : 298,
+        "movie_name" : "Ghost Rider",
+        "movie_genre" : "Action|Fantasy|Thriller",
+        "production_year" : 1999,
+        "budget" : 9095
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c705"),
+        "id" : 304,
+        "movie_name" : "Vessel of Wrath",
+        "movie_genre" : "Drama",
+        "production_year" : 1995,
+        "budget" : 9876
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c722"),
+        "id" : 333,
+        "movie_name" : "Head Over Heels",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1999,
+        "budget" : 9368
+}
+>> db.movies.find({$or:[{production_year:{$ne:2000}},{budget:{$ne:10000}}]}).pretty() 
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d6"),
+        "id" : 1,
+        "movie_name" : "Crazed Fruit (Kurutta kajitsu)",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 10419
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d7"),
+        "id" : 2,
+        "movie_name" : "Pet Sematary II",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 1994,
+        "budget" : 11954
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d8"),
+        "id" : 3,
+        "movie_name" : "The Real Glory",
+        "movie_genre" : "War",
+        "production_year" : 2016,
+        "budget" : 10248
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d9"),
+        "id" : 4,
+        "movie_name" : "Sex Ed",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2012,
+        "budget" : 15113
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5da"),
+        "id" : 5,
+        "movie_name" : "Submarine",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1999,
+        "budget" : 15937
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5db"),
+        "id" : 6,
+        "movie_name" : "Sting, The",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2012,
+        "budget" : 19258
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dc"),
+        "id" : 7,
+        "movie_name" : "Rivers and Tides",
+        "movie_genre" : "Documentary",
+        "production_year" : 2004,
+        "budget" : 19662
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dd"),
+        "id" : 8,
+        "movie_name" : "Prime Suspect",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 2001,
+        "budget" : 11585
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5de"),
+        "id" : 9,
+        "movie_name" : "SUBWAYStories: Tales from the Underground",
+        "movie_genre" : "Drama",
+        "production_year" : 2018,
+        "budget" : 18232
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5df"),
+        "id" : 10,
+        "movie_name" : "Blow",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2014,
+        "budget" : 16689
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e0"),
+        "id" : 11,
+        "movie_name" : "Congress, The",
+        "movie_genre" : "Animation|Sci-Fi",
+        "production_year" : 2019,
+        "budget" : 11978
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e1"),
+        "id" : 12,
+        "movie_name" : "Move (3 Zimmer/Küche/Bad)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2010,
+        "budget" : 16887
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e2"),
+        "id" : 13,
+        "movie_name" : "28 Up",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 13823
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e3"),
+        "id" : 14,
+        "movie_name" : "Dogtooth (Kynodontas)",
+        "movie_genre" : "Drama",
+        "production_year" : 2013,
+        "budget" : 11253
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e4"),
+        "id" : 15,
+        "movie_name" : "Why Stop Now",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 14895
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e5"),
+        "id" : 16,
+        "movie_name" : "The Green Years",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e6"),
+        "id" : 17,
+        "movie_name" : "Hangover, The",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 1994,
+        "budget" : 10741
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e7"),
+        "id" : 18,
+        "movie_name" : "Kim",
+        "movie_genre" : "Children|Drama",
+        "production_year" : 2008,
+        "budget" : 10232
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e8"),
+        "id" : 19,
+        "movie_name" : "Gigli",
+        "movie_genre" : "Comedy|Crime|Romance",
+        "production_year" : 2010,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e9"),
+        "id" : 20,
+        "movie_name" : "Phaedra",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 18489
+}
+Type "it" for more
+ db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).pretty()
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5d6"),
+        "id" : 1,
+        "movie_name" : "Crazed Fruit (Kurutta kajitsu)",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 10419
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dc"),
+        "id" : 7,
+        "movie_name" : "Rivers and Tides",
+        "movie_genre" : "Documentary",
+        "production_year" : 2004,
+        "budget" : 19662
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5dd"),
+        "id" : 8,
+        "movie_name" : "Prime Suspect",
+        "movie_genre" : "Crime|Drama|Mystery|Thriller",
+        "production_year" : 2001,
+        "budget" : 11585
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e1"),
+        "id" : 12,
+        "movie_name" : "Move (3 Zimmer/Küche/Bad)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2010,
+        "budget" : 16887
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e2"),
+        "id" : 13,
+        "movie_name" : "28 Up",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 13823
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e4"),
+        "id" : 15,
+        "movie_name" : "Why Stop Now",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2005,
+        "budget" : 14895
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e5"),
+        "id" : 16,
+        "movie_name" : "The Green Years",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e7"),
+        "id" : 18,
+        "movie_name" : "Kim",
+        "movie_genre" : "Children|Drama",
+        "production_year" : 2008,
+        "budget" : 10232
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e8"),
+        "id" : 19,
+        "movie_name" : "Gigli",
+        "movie_genre" : "Comedy|Crime|Romance",
+        "production_year" : 2010,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5e9"),
+        "id" : 20,
+        "movie_name" : "Phaedra",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 18489
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5eb"),
+        "id" : 22,
+        "movie_name" : "White Angel, The (L'angelo bianco)",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 17297
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5ef"),
+        "id" : 26,
+        "movie_name" : "Pastoral Hide and Seek (Den-en ni shisu)",
+        "movie_genre" : "Drama",
+        "production_year" : 2010,
+        "budget" : 19466
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5f1"),
+        "id" : 28,
+        "movie_name" : "French Twist (Gazon maudit)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2008,
+        "budget" : 14968
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5f2"),
+        "id" : 29,
+        "movie_name" : "Legend of Rita, The (Stille nach dem Schuß, Die)",
+        "movie_genre" : "Drama",
+        "production_year" : 2008,
+        "budget" : 13909
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5f7"),
+        "id" : 34,
+        "movie_name" : "Airspeed",
+        "movie_genre" : "Action|Adventure|Drama|Thriller",
+        "production_year" : 2006,
+        "budget" : 11124
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5f8"),
+        "id" : 35,
+        "movie_name" : "Upstream",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2006,
+        "budget" : 12680
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c5ff"),
+        "id" : 42,
+        "movie_name" : "Gorko!",
+        "movie_genre" : "Comedy",
+        "production_year" : 2010,
+        "budget" : 15769
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c603"),
+        "id" : 46,
+        "movie_name" : "Material Girls",
+        "movie_genre" : "Children|Comedy|Drama",
+        "production_year" : 2010,
+        "budget" : 14612
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c604"),
+        "id" : 47,
+        "movie_name" : "Pot v raj",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2010,
+        "budget" : 17023
+}
+{
+        "_id" : ObjectId("622807da49007ce3feb8c608"),
+        "id" : 51,
+        "movie_name" : "Redirected",
+        "movie_genre" : "Action|Comedy|Crime",
+        "production_year" : 2007,
+        "budget" : 10144
+}
+Type "it" for more
+> db.movies.find({},{movie_name:1,production_year:1,_id:0}).sort({production_year: -1,movie_name: -1}).pretty()
+{ "movie_name" : "Silent One, The", "production_year" : 2020 }
+{ "movie_name" : "Siege, The", "production_year" : 2020 }
+{ "movie_name" : "Coldblooded", "production_year" : 2020 }
+{ "movie_name" : "35 Shots of Rum (35 rhums)", "production_year" : 2020 }
+{ "movie_name" : "Woody Allen: A Documentary", "production_year" : 2019 }
+{
+        "movie_name" : "Water Horse: Legend of the Deep, The",
+        "production_year" : 2019
+}
+{
+        "movie_name" : "Rickshaw Man, The (Muhomatsu no issho)",
+        "production_year" : 2019
+}
+{ "movie_name" : "Reign of Fire", "production_year" : 2019 }
+{ "movie_name" : "Rambo: First Blood Part II", "production_year" : 2019 }
+{
+        "movie_name" : "Lavatory Lovestory (Ubornaya istoriya - lyubovnaya istoriya)",
+        "production_year" : 2019
+}
+{ "movie_name" : "Kiss, The", "production_year" : 2019 }
+{ "movie_name" : "In the Heart of the Sea", "production_year" : 2019 }
+{ "movie_name" : "I Really Hate My Job", "production_year" : 2019 }
+{ "movie_name" : "From Beijing with Love", "production_year" : 2019 }
+{
+        "movie_name" : "Exterminating Angels, The (anges exterminateurs, Les)",
+        "production_year" : 2019
+}
+{
+        "movie_name" : "Discreet Charm of the Bourgeoisie, The (Charme discret de la bourgeoisie, Le)",
+        "production_year" : 2019
+}
+{ "movie_name" : "Congress, The", "production_year" : 2019 }
+{ "movie_name" : "City of Hope", "production_year" : 2019 }
+{ "movie_name" : "Blackthorn", "production_year" : 2019 }
+{ "movie_name" : "Bad Santa", "production_year" : 2019 }
+Type "it" for more
+>  db.movies.find({},{movie_name:1,production_year:1,_id:0,id:1}).sort({production_year: -1,movie_name: -1}).skip(10).limit(5).pretty()
+{ "id" : 168, "movie_name" : "Kiss, The", "production_year" : 2019 }
+{
+        "id" : 430,
+        "movie_name" : "In the Heart of the Sea",
+        "production_year" : 2019
+}
+{
+        "id" : 164,
+        "movie_name" : "I Really Hate My Job",
+        "production_year" : 2019
+}
+{
+        "id" : 292,
+        "movie_name" : "From Beijing with Love",
+        "production_year" : 2019
+}
+{
+        "id" : 449,
+        "movie_name" : "Exterminating Angels, The (anges exterminateurs, Les)",
+        "production_year" : 2019
+}
+> db.movies.find({},{_id:0,movie_genre:0}).sort({production_year: -1,movie_name: -1}).limit(10).pretty()
+{
+        "id" : 295,
+        "movie_name" : "Silent One, The",
+        "production_year" : 2020,
+        "budget" : 9850
+}
+{
+        "id" : 496,
+        "movie_name" : "Siege, The",
+        "production_year" : 2020,
+        "budget" : 9999
+}
+{
+        "id" : 277,
+        "movie_name" : "Coldblooded",
+        "production_year" : 2020,
+        "budget" : 9527
+}
+{
+        "id" : 464,
+        "movie_name" : "35 Shots of Rum (35 rhums)",
+        "production_year" : 2020,
+        "budget" : 9421
+}
+{
+        "id" : 106,
+        "movie_name" : "Woody Allen: A Documentary",
+        "production_year" : 2019,
+        "budget" : 11392
+}
+{
+        "id" : 76,
+        "movie_name" : "Water Horse: Legend of the Deep, The",
+        "production_year" : 2019,
+        "budget" : 13485
+}
+{
+        "id" : 325,
+        "movie_name" : "Rickshaw Man, The (Muhomatsu no issho)",
+        "production_year" : 2019,
+        "budget" : 16141
+}
+{
+        "id" : 229,
+        "movie_name" : "Reign of Fire",
+        "production_year" : 2019,
+        "budget" : 11554
+}
+{
+        "id" : 143,
+        "movie_name" : "Rambo: First Blood Part II",
+        "production_year" : 2019,
+        "budget" : 16681
+}
+{
+        "id" : 231,
+        "movie_name" : "Lavatory Lovestory (Ubornaya istoriya - lyubovnaya istoriya)",
+        "production_year" : 2019,
+        "budget" : 14024
+}
