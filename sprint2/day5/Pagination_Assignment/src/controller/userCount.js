@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const mailSend = require("../utils/mailSend");
+const mailSend = require("../mailes/mailSend");
 
 const User = require("../models/userModel");
 
