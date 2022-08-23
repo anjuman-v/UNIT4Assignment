@@ -1,0 +1,116 @@
+db.users.insert({
+    'first_name': 'zoya',
+    'last_name': 'JavaScript',
+    'email': 'zoya@gmail.com',
+    'gender':'female',
+    'age':8
+    
+ })
+
+
+ db.users.insertMany([{
+    'first_name': 'ram',
+    'last_name': 'rapmonster',
+    'email': 'ram@gmail.com',
+    'gender':'male',
+    'age':27,
+    'ip_adress':3470236378108324
+     }, 
+     {'first_name': 'jimin',
+    'last_name': 'park',
+    'email': 'jimin@gmail.com',
+    'gender':'male',
+    'age':2,
+    'ip_adress':0912376378108324
+     },
+     {'first_name': 'joung',
+    'last_name': 'kook',
+    'email': 'joung_kook@gmail.com',
+    'gender':'male',
+    'age':25,
+    'ip_adress':0251976378108324
+     },
+     {'first_name': 'suga',
+    'last_name': 'min',
+    'email': 'suga@gmail.com',
+    'gender':'male',
+    'age':2,
+    'ip_adress':0222100976378108324
+     },
+
+     {'first_name': 'kim',
+    'last_name': 'taihyung',
+    'email': 'kim@gmail.com',
+    'gender':'female',
+    'age':26,
+    'ip_adress':236378108324
+ }])
+
+
+
+db.users.updateMany({name: 'Anjuman'},
+{'first_name': 'harry',
+    'last_name': 'potter',
+    'email': 'potter@gmail.com',
+    'gender':'male',
+    'age':35
+
+
+import json data to mongos
+
+mongoimport  --drop --collection --file ~Desktop/backendAssignment/day4/users.json --jsonArray
+
+count data
+db.users.find().count()
+
+qus:1-find all movies which are equal to movie_name
+db.movies.find({movie_name:{$eq:"Hangover, The"}}).pretty()
+
+
+qus2:find all movies which are not equal to movie_name
+db.movies.find({movie_name:{$ne:"Hangover, The"}}).pretty()
+
+
+qus3:find all movies greater than and greater than equal to a budget
+db.movies.find({budget:{$gte:19000}}).pretty()
+
+
+qus4:find all movies less than and less than equal to a budget
+db.movies.find({budget:{$lte:9100}}).pretty() 
+
+
+qus5:find all movies that are produced after 2000 with budget greater than 10000
+db.movies.find({$and:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+
+
+qus6:find all movies that are produced after 2000 or budget greater than 10000
+db.movies.find({$or:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+
+
+qus7:find all movies that are neither produced after 2000 nor with budget greater than 10000.
+db.movies.find({$nor:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty()
+
+
+qus8:find all movies that are not produced in 2000 or they do not have budget of 10000
+db.movies.find({$or:[{production_year:{$ne:2000}},{budget:{$ne:10000}}]}).pretty()
+
+
+qus9:find all movies that were produced from 2000 to 2010.
+db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).pretty()
+
+
+qus10:Sort all movies descending based on the production year and if the year is same then alphabetically for their movie_names
+db.movies.find({},{movie_name:1,production_year:1,_id:0}).sort({production_year: -1,movie_name: -1}).pretty()
+
+
+qus:11
+db.movies.find({},{movie_name:1,production_year:1,_id:0,id:1}).sort({production_year: -1,movie_name: -1}).skip(10).limit(5).pretty()
+
+
+qus:12
+db.movies.find({},{_id:0,movie_genre:0}).sort({production_year: -1,movie_name: -1}).limit(10).pretty()
+
+
+
+
+
