@@ -51,12 +51,13 @@ app.get(
   }
 );
 
-
+// get routes
 app.get("/auth/google/success", (req, res)=>{
 
     return res.send("success");
 
 })
+
 
 app.get("/auth/google/failure", (req, res) => {
   return res.send("failure");
